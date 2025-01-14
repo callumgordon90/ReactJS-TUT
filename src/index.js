@@ -1,13 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Use 'react-dom/client' for React 18+
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import Square from './App';
 
-function App() {
-  return <h1>Hello, React!</h1>;
-}
-
-// Get the root DOM node
-const rootElement = document.getElementById('root');
-
-// Create a root and render the App component
-const root = ReactDOM.createRoot(rootElement);
-root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Square />);
