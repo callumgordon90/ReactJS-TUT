@@ -12,14 +12,24 @@ function Square({value, onSquareClick}){
 
 //PARENT BOARD COMPONENT (manages state)
 export default function Board() {
-  //lifting state up
+  
+  const [xIsNext, setXIsNext] = useState(true);
+
   const [squares, setSquares] = useState(Array(9).fill(null));
-  console.log(squares);
+  //console.log(squares);
 
   function handleClick(i){
     const nextSquares = squares.slice();
+
+    if(xIsNext){
     nextSquares[i] = "X";
+    } else{
+      nextSquares[i] = "O";
+    }
+
+
     setSquares(nextSquares);
+    setXIsNext(!xIsNext);
   }
 
   return(
