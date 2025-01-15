@@ -1,10 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
 
+//CHILD SQUARE COMPONENT (displays value , recieves props from board, contains event handler)
+
+//(When clicking on a Square, the child Square component now asks the parent Board component
+// to update the state of the board).
+
 function Square({value, onSquareClick}){
   return <button className="square" onClick={onSquareClick}>{value}</button>
 }
 
+//PARENT BOARD COMPONENT (manages state)
 export default function Board() {
   //lifting state up
   const [squares, setSquares] = useState(Array(9).fill(null));
